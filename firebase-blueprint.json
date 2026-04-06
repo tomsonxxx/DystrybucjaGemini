@@ -1,0 +1,63 @@
+{
+  "entities": {
+    "User": {
+      "title": "Użytkownik",
+      "description": "Profil użytkownika w systemie.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Unikalny identyfikator Firebase Auth." },
+        "email": { "type": "string", "format": "email", "description": "Adres e-mail użytkownika." },
+        "displayName": { "type": "string", "description": "Nazwa wyświetlana." },
+        "photoURL": { "type": "string", "description": "Link do zdjęcia profilowego." },
+        "role": { "type": "string", "enum": ["artist", "label", "admin"], "description": "Rola w systemie." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Data utworzenia konta." }
+      },
+      "required": ["uid", "email", "role"]
+    },
+    "Artist": {
+      "title": "Artysta",
+      "description": "Profil artystyczny powiązany z użytkownikiem.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "ID użytkownika będącego właścicielem profilu." },
+        "name": { "type": "string", "description": "Pseudonim artystyczny." },
+        "bio": { "type": "string", "description": "Biografia artysty." },
+        "verified": { "type": "boolean", "description": "Czy profil jest zweryfikowany." }
+      },
+      "required": ["userId", "name"]
+    },
+    "Release": {
+      "title": "Wydanie",
+      "description": "Singiel, EP lub Album przesyłany do dystrybucji.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "ID użytkownika będącego właścicielem wydania." },
+        "artistId": { "type": "string", "description": "ID profilu artysty przypisanego do wydania." },
+        "title": { "type": "string", "description": "Tytuł wydania." },
+        "type": { "type": "string", "enum": ["single", "ep", "album"], "description": "Typ wydania." },
+        "genre": { "type": "string", "description": "Gatunek muzyczny." },
+        "releaseDate": { "type": "string", "format": "date", "description": "Planowana data wydania." },
+        "status": { "type": "string", "enum": ["draft", "pending", "approved", "rejected", "distributed"], "description": "Status wydania." },
+        "coverUrl": { "type": "string", "description": "URL okładki." },
+        "isrc": { "type": "string", "description": "Kod ISRC (opcjonalnie)." },
+        "upc": { "type": "string", "description": "Kod UPC (opcjonalnie)." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Data utworzenia." }
+      },
+      "required": ["userId", "artistId", "title", "type", "status"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "Kolekcja danych użytkowników."
+    },
+    "/artists/{artistId}": {
+      "schema": "Artist",
+      "description": "Kolekcja profili artystycznych."
+    },
+    "/releases/{releaseId}": {
+      "schema": "Release",
+      "description": "Kolekcja wydań muzycznych."
+    }
+  }
+}
