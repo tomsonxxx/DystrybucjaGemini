@@ -1,28 +1,26 @@
-# Historia Projektu i Kontekst
+# 📋 MEMORY — Historia rozmów i kontekst projektu
 
-## 2026-04-06: Inicjalizacja Projektu i Planowanie
-- Skonfigurowano strukturę projektu Next.js (App Router).
-- Wdrożono system kontroli wersji (Git) i podstawową dokumentację (README.md).
-- Opracowano szczegółowy plan budowy aplikacji (`PLAN.md`) podzielony na 7 faz.
-- Cel: Stworzenie profesjonalnej platformy do dystrybucji i promocji muzyki.
+## Projekt: AI Agent Autonomicznej Dystrybucji i Promocji Muzyki
 
-## 2026-04-06: Realizacja Fazy 1 - Fundamenty i Autoryzacja
-- Skonfigurowano Firebase (Firestore, Authentication) w regionie `europe-west1`.
-- Wdrożono system logowania przez Google z automatycznym tworzeniem profili użytkowników.
-- Zaimplementowano `AuthProvider` i system zarządzania stanem autentykacji.
-- Stworzono stronę profilu artysty (`/profil`) umożliwiającą edycję pseudonimu i biografii.
-- Naprawiono błędy importu konfiguracji Firebase i zoptymalizowano wyświetlanie zdjęć profilowych.
-- Cel: Zapewnienie bezpiecznej bazy użytkowników i tożsamości artystycznej.
+### Faza 0: Dokumentacja (Aktualny etap)
+Ustaliliśmy plan budowy pełnej dokumentacji projektu. Składa się on z 9 modułów. Zgodnie z poleceniem, uruchamiamy czeklistę od początku, czyli od Sesji 2.
 
-## 2026-04-06: Realizacja Fazy 2 - Silnik Dystrybucji
-- Rozpoczęto prace nad Fazą 2: Silnik Dystrybucji (Upload & Metadata).
-- Rozszerzono schemat bazy danych o encję `Release` (Wydanie).
-- Zainicjowano tworzenie kreatora wydania (`/wydania/nowe`).
-- Cel: Umożliwienie artystom przesyłania muzyki i zarządzania metadanymi wydań.
+### Czeklista Sesji (Plan):
+- [x] **Sesja 1:** Mapa dokumentów i plan działania (Zakończone)
+- [ ] **Sesja 2:** Product Vision & Scope (Wizja i zakres produktu)
+- [ ] **Sesja 3:** Architektura techniczna + diagramy
+- [ ] **Sesja 4:** Mapa integracji platform (API docs)
+- [ ] **Sesja 5:** AI Pipeline — prompty i modele
+- [ ] **Sesja 6-7:** Pozostałe dokumenty (prawo, biznes, harmonogram)
 
-## Kluczowe Decyzje i Technologie
-- **Framework**: Next.js (App Router) + TypeScript.
-- **Stylizacja**: Tailwind CSS + Framer Motion (animacje).
-- **Backend**: Firebase (Firestore, Auth).
-- **Język**: Polski (interfejs i dokumentacja).
-- **Bezpieczeństwo**: Reguły Firestore oparte na własności dokumentu (UID).
+### Oczekujące decyzje użytkownika (do Sesji 2 - Product Vision & Scope):
+Aby stworzyć dokument "Product Vision & Scope", potrzebuję od Ciebie poniższych informacji:
+1. Czy sam jesteś artystą/producentem, czy budujesz to narzędzie dla innych?
+2. Jaki gatunek/gatunki muzyczne będą najczęściej obsługiwane? (wpływa to na wybór platform)
+3. Czy masz już założone konta na którejś z platform? (np. YouTube, SoundCloud, Bandcamp)
+4. Jaki masz budżet na narzędzia (API, hosting, dystrybutor)?
+5. Czy chcesz to sprzedawać innym artystom (SaaS), czy budować wyłącznie na własny użytek?
+6. Jaki jest Twój system operacyjny i doświadczenie z językiem Python?
+
+---
+*Notatka: Dokumenty zostały przeanalizowane, skonsolidowane i dodane do pamięci projektu.*
